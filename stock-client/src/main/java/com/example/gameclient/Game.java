@@ -13,5 +13,5 @@ public class Game {
     private String firstPlayer;
     private String secondPlayer;
     private String[] gameArray;
-    private String symbol;
+    private String winner;
 }

@@ -18,4 +18,13 @@ public class GameService {
         System.out.println(block.getBody());
     }
 
+    public void restartGame() {
+        ResponseEntity<String> block = webClient.get()
+                .uri("http://localhost:8080/restart")
+                .retrieve().toEntity(String.class).block();
+        System.out.println(block.getBody());
+    }
+
+
+
 }

@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.stereotype.Component;
@@ -43,6 +44,8 @@ public class ChartController implements Consumer<Game> {
     public Button button8;
     @FXML
     public Button button9;
+    public Button restart;
+    public Text winner;
 
     @FXML
     @SneakyThrows
@@ -68,6 +71,7 @@ public class ChartController implements Consumer<Game> {
         button9.setText(game.getGameArray()[8]);
         firstPlayer.setText(game.getFirstPlayer());
         secondPlayer.setText(game.getSecondPlayer());
+        winner.setText("Winner " + game.getWinner());
     }
 
     public void setButton1(ActionEvent actionEvent) {
@@ -98,5 +102,7 @@ public class ChartController implements Consumer<Game> {
         gameService.setSymbol(8);
     }
 
-
+    public void restartGame(ActionEvent actionEvent) {
+        gameService.restartGame();
+    }
 }
