@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gameui.ChartController">
+   <children>
+      <Label fx:id="firstPlayer" layoutX="14.0" layoutY="14.0" prefHeight="76.0" prefWidth="161.0" text="Player 1" textFill="#0a0a0c">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="secondPlayer" layoutX="425.0" layoutY="14.0" prefHeight="76.0" prefWidth="161.0" text="Player 2" textFill="#0a0a0c">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Button fx:id="button1" layoutX="88.0" layoutY="110.0" mnemonicParsing="false" onAction="#setButton1" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button2" layoutX="204.0" layoutY="110.0" mnemonicParsing="false" onAction="#setButton2" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button3" layoutX="316.0" layoutY="110.0" mnemonicParsing="false" onAction="#setButton3" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button4" layoutX="88.0" layoutY="184.0" mnemonicParsing="false" onAction="#setButton4" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button5" layoutX="204.0" layoutY="184.0" mnemonicParsing="false" onAction="#setButton5" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button6" layoutX="316.0" layoutY="184.0" mnemonicParsing="false" onAction="#setButton6" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button7" layoutX="88.0" layoutY="256.0" mnemonicParsing="false" onAction="#setButton7" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button8" layoutX="204.0" layoutY="256.0" mnemonicParsing="false" onAction="#setButton8" prefHeight="66.0" prefWidth="109.0" />
+      <Button fx:id="button9" layoutX="316.0" layoutY="256.0" mnemonicParsing="false" onAction="#setButton9" prefHeight="66.0" prefWidth="109.0" />
+   </children>
+</AnchorPane>
