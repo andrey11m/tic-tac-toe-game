@@ -50,8 +50,9 @@ public class ChartController implements Consumer<Game> {
     @FXML
     @SneakyThrows
     public void initialize() {
-        webClientGameClient.pricesFor().subscribe(this);
+        webClientGameClient.startGame().subscribe(this);
     }
+
 
     @Override
     public void accept(Game game) {

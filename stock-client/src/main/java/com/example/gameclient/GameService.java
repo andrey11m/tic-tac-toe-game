@@ -1,6 +1,7 @@
 package com.example.gameclient;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -11,18 +12,19 @@ public class GameService {
 
     private final WebClient webClient;
 
+    @Value("${spring.application.client.url}")
+    private String url;
+
     public void setSymbol(int id) {
-        ResponseEntity<String> block = webClient.get()
-                .uri("http://localhost:8080/set-symbol/" + id)
+        webClient.get()
+                .uri(url+"set-symbol/" + id)
                 .retrieve().toEntity(String.class).block();
-        System.out.println(block.getBody());
     }
 
     public void restartGame() {
-        ResponseEntity<String> block = webClient.get()
-                .uri("http://localhost:8080/restart")
+        webClient.get()
+                .uri(url+ "restart")
                 .retrieve().toEntity(String.class).block();
-        System.out.println(block.getBody());
     }
 
 
