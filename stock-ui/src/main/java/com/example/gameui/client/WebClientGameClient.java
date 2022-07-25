@@ -26,4 +26,12 @@ public class WebClientGameClient {
                 .bodyToFlux(Game.class)
                 .retry().doOnError(IOException.class, e -> log.error(e.getMessage()));
     }
+    public Flux<byte[]> startListenTOAudio() {
+        return webClient
+                .get()
+                .uri(url+ "audio")
+                .retrieve()
+                .bodyToFlux(byte[].class)
+                .retry().doOnError(IOException.class, e -> log.error(e.getMessage()));
+    }
 }

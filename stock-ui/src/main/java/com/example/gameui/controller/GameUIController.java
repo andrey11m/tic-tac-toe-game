@@ -1,9 +1,10 @@
 package com.example.gameui.controller;
 
+import com.example.gameui.client.AudioSubscriber;
 import com.example.gameui.model.Game;
 import com.example.gameui.service.GameService;
 import com.example.gameui.client.WebClientGameClient;
-import com.example.gameui.service.CaptureAudioService;
+import com.example.gameui.service.AudioService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +23,7 @@ public class GameUIController implements Consumer<Game> {
 
     private final WebClientGameClient webClientGameClient;
     private final GameService gameService;
-    private final CaptureAudioService audioService;
+    private final AudioService audioService;
 
     @FXML
     public Label secondPlayer;
@@ -113,12 +114,11 @@ public class GameUIController implements Consumer<Game> {
     }
 
     public void setAudio(ActionEvent actionEvent) {
-        audioService.getByteArrayOutputStream();
-        gameService.sendAudio();
+        AudioSubscriber audioSubscriber = new AudioSubscriber();
+        webClientGameClient.startListenTOAudio().subscribe(audioSubscriber);
     }
 
     public void setMute(ActionEvent actionEvent) {
         System.out.println("Mute");
-        audioService.setStopCapture();
     }
 }
