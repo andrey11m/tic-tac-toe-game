@@ -27,6 +27,7 @@ public class WebClientGameClient {
                 .retry().doOnError(IOException.class, e -> log.error(e.getMessage()));
     }
     public Flux<byte[]> startListenTOAudio() {
+        System.out.println("start audio");
         return webClient
                 .get()
                 .uri(url+ "audio")

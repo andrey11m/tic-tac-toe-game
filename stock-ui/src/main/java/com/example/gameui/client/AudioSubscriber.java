@@ -27,6 +27,7 @@ public class AudioSubscriber implements Consumer<byte[]> {
 
     @Override
     public void accept(byte[] bytes) {
+        System.out.println(Arrays.toString(bytes));
         byte[] temp;
         if (bytes.length % 2 != 0) {
             temp = Arrays.copyOf(bytes, bytes.length +1);
